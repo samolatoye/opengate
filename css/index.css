@@ -868,8 +868,149 @@ nav {
     object-fit: contain;
     display: block;
 }
+
+
 /* Blog Carousel Section */
 .blog {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e8f4f8 100%);
+    overflow: hidden;
+}
+.carousel-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  background: white;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.carousel-card {
+  flex: 0 0 33.333%;
+  height: 400px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.carousel-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25); /* adjust 0.3 for darker/lighter */
+  z-index: 1;
+} 
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 40px 30px 30px;
+  color: white;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.4s ease;
+  z-index: 2; /* make sure text is above ::before */
+}
+
+.carousel-card:hover .card-overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  line-height: 1.3;
+  color: var(--white);
+  font-weight: 10;
+}
+
+.card-description {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: var(--white);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.read-more {
+  display: inline-block;
+  background: #ff6b6b;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.read-more:hover {
+  background: #ff5252;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  transition: all 0.3s ease;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav-button:hover {
+  background: #c41e3a;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.prev-btn {
+  left: 20px;
+}
+
+.next-btn {
+  right: 20px;
+}
+.blog-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/*.blog {
     padding: 5rem 2rem;
     background: linear-gradient(135deg, #f8f9fa 0%, #e8f4f8 100%);
     overflow: hidden;
@@ -885,6 +1026,7 @@ nav {
     display: flex;
     transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     will-change: transform;
+    width: 100%;
 }
 
 .blog-slide {
@@ -898,28 +1040,28 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    flex: 1;
-    border-radius: 20px;
+    flex: 0 0 calc(100% / 3); /* 3 cards per view */
+   /* border-radius: 10px;
     overflow: hidden;
     min-height: 450px;
+    min-width: 200px;
     position: relative;
-    background-size: cover;       /* makes the image fill the card */
-    background-position: center;  /* keeps focus on the middle */
-    background-repeat: no-repeat;
-    color: #fff;
+    background-size: cover;      
+    background-position: center; 
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
+    box-sizing: border-box;
 
 
-    /*flex: 1;
+    /*flex: 1;    this is hiden before
     background: var(--white);
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
     position: relative;
-    min-height: 450px;*/
-}
+    min-height: 450px;*/  /* stop here */
+/*}
 
 .blog-card::before {
   content: "";
@@ -929,7 +1071,7 @@ nav {
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.3); /* adjust 0.5 for darker/lighter */
-  z-index: 1;
+ /* z-index: 1;
 }
 
 .blog-card:hover {
@@ -953,7 +1095,7 @@ nav {
     opacity: 100%; 
 } */
 
-.blog-image {
+/*.blog-image {
     position: relative;
     height: 200px;
     overflow: hidden;
@@ -1127,10 +1269,10 @@ nav {
 .blog-cta {
     text-align: center;
     margin-top: 3rem;
-}
+} */
 
 /* Responsive Blog Carousel */
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
     .blog-slide {
         display: flex;
         flex-direction: row;         
@@ -1142,7 +1284,7 @@ nav {
     .blog-card {
         flex: 0 0 100%;              /* ✅ one card fills screen */
        /* min-height: 400px; */
-        scroll-snap-align: start;   
+     /*   scroll-snap-align: start;   
     }
 
     .blog-content {
@@ -1154,11 +1296,11 @@ nav {
     }
 
     /* Hide arrows and dots */
-    .blog-controls,
+    /*.blog-controls,
     .blog-indicators {
         display: none !important;
     }
-} 
+} */
 
 .cta {
     padding: 5rem 2rem;
@@ -1376,6 +1518,59 @@ footer {
   }
 }
 
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .carousel-card {
+    flex: 0 0 100%;
+    height: 500px;
+  }
+
+  .nav-button {
+    display: none;
+  }
+
+  .card-overlay {
+    transform: translateY(0);
+    opacity: 1;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    padding: 50px 25px 25px;
+  }
+
+  .card-title {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  line-height: 1.3;
+  color: var(--white);
+  font-weight: 10;
+}
+
+  .card-description {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: var(--white);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    display: -webkit-box;
+    overflow: hidden;
+
+    
+  }
+
+  body {
+    padding: 20px 10px;
+  }
+}
+
+/* Touch scrolling for mobile */
+@media (max-width: 768px) {
+  .carousel-container {
+    touch-action: pan-x;
+  }
+}
+
 html {
     scroll-padding-top: 80px; /* adjust to your nav height */
     font-size: 16px; /* base font size */
@@ -1391,6 +1586,6 @@ html {
   80%, 100% { background-image: url("../assets/banner.jpg"); }
 }
 
-.blog-read-more {
-  display: none !important;
+.read-more {
+    display: none !important;
 }
