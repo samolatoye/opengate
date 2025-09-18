@@ -1,3 +1,15 @@
+// Show popup after page load
+window.onload = function() {
+  document.getElementById("popup").classList.add("show");
+};
+
+// Close popup
+function closePopup() {
+  document.getElementById("popup").classList.remove("show");
+}
+
+
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
