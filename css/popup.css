@@ -1,0 +1,102 @@
+/* Popup background overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  z-index: 1000;
+}
+
+/* Show state */
+.popup-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Popup box */
+.popup-box {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  max-width: 420px;
+  width: 90%;
+  overflow: hidden;
+  animation: fadeInUp 0.5s ease;
+}
+
+/* Popup header */
+.popup-header {
+  background: linear-gradient(135deg, #1e225f 0%, #3f3dad 100%);
+  padding: 20px 25px;
+  color: white;
+  position: relative;
+}
+
+.popup-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+  padding-right: 30px;
+    text-align: center;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Popup content */
+.popup-content {
+  padding: 20px;
+  text-align: center;
+  color: #444;
+}
+
+.popup-content p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+/* Old address */
+.old-address {
+  font-weight: bold;
+  color: #555;
+  text-decoration: line-through;
+}
+
+/* New address highlight */
+.new-address {
+  font-weight: bold;
+  color: #667eea;
+  font-size: 1.15rem;
+  margin-top: 15px;
+  padding: 15px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  border-radius: 10px;
+  border-left: 4px solid #667eea;
+}
+
+/* Simple fade-up animation */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
