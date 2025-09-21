@@ -311,24 +311,3 @@ document.querySelectorAll(".stats").forEach(section => {
     statsObserver.observe(section);
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  // List all images used in your slideshow
-  const images = [
-    "../gallery/uploads/img4.webp",
-    "../gallery/uploads/img9.webp",
-    "../gallery/uploads/img13.webp",
-    "../gallery/uploads/img7.webp",
-    "../gallery/uploads/img10.jpg",
-    "../gallery/uploads/img17.webp",
-    "../gallery/uploads/img16.webp",
-    "../gallery/uploads/img15.webp",
-    "../gallery/uploads/img14.webp"
-  ];
-
-  // Preload them
-  images.forEach(src => {
-    const img = new Image();
-    img.src = src;
-  });
-});
-
