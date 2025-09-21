@@ -137,8 +137,8 @@ nav {
 /* Hero Section */
 
 .hero {
-    min-height: 600px;
-    background: var(--gradient-1);
+    min-height: 100vh;
+   /* background: var(--gradient-1); */
     position: relative;
     display: flex;
     align-items: center;
@@ -146,13 +146,34 @@ nav {
     overflow: hidden;
     margin-top: 56px;
     padding-top: 56px;
+}
+.slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* behind content */
+  overflow: hidden;
+}
 
+.slideshow img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.slideshow img.active {
+  opacity: 1;
+}
     /* Background slideshow */
-    background-size: cover;
+   /* background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    animation: heroSlideshow 20s infinite linear;
-}
+    animation: heroSlideshow 20s infinite linear;*/
 
 /*.hero::before {
     content: '';
@@ -1665,10 +1686,10 @@ footer {
         display: flex;
     }
 
-    .hero {
-        background-size: cover; /* still fill */
-        background-position: center; /* shift focus to the top */
-    }
+   /* .hero {
+        background-size: cover; 
+        background-position: center; 
+    } */
 
     .hero-content {
         grid-template-columns: 1fr;
@@ -1765,17 +1786,17 @@ html {
 }
 
 /* Background slideshow keyframes */
-@keyframes heroSlideshow {
+/*@keyframes heroSlideshow {
   0%, 15%   { background-image: url("../gallery/uploads/img4.webp"); }
   16%, 25%  { background-image: url("../gallery/uploads/img9.webp"); }
   26%, 35%  { background-image: url("../gallery/uploads/img13.webp"); }
   36%, 45%  { background-image: url("../gallery/uploads/img7.webp"); }
- /* 46%, 55% { background-image: url("../gallery/uploads/img10.jpg"); } *\
+  46%, 55% { background-image: url("../gallery/uploads/img10.jpg"); }
   56%, 65% { background-image: url("../gallery/uploads/img17.webp"); }
   66%, 75% { background-image: url("../gallery/uploads/img16.webp"); }
   76%, 85% { background-image: url("../gallery/uploads/img15.webp"); }
   86%, 100% { background-image: url("../gallery/uploads/img14.webp"); }
-}
+} */
 
 .read-more {
     display: none !important;
