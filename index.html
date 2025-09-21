@@ -95,6 +95,19 @@
     <!-- Hero Section -->
         <!-- Hero Section -->
     <section class="hero" id="home">
+
+      <div class="slideshow">
+    <img src="./gallery/uploads/img4.webp" class="active">
+    <img src="./gallery/uploads/img9.webp">
+    <img src="./gallery/uploads/img13.webp">
+    <img src="./gallery/uploads/img7.webp">
+    <img src="./gallery/uploads/img10.jpg">
+    <img src="./gallery/uploads/img17.webp">
+    <img src="./gallery/uploads/img16.webp">
+    <img src="./gallery/uploads/img15.webp">
+    <img src="./gallery/uploads/img14.webp">
+
+    </div>
         <div class="hero-content">
             <div class="hero-text">
                 <h1>Empowering You<span class="highlight"> to Save Lives</span></h1>
@@ -537,6 +550,19 @@
 
 
     <script src="./js/index.js" defer></script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll(".slideshow img");
+  let index = 0;
+
+  setInterval(() => {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }, 5000); // 5s per slide
+});
+</script>
+
 
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/2347055642353" style="
