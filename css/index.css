@@ -1766,15 +1766,15 @@ html {
 
 /* Background slideshow keyframes */
 @keyframes heroSlideshow {
-  0%, 15%   { background-image: url("../gallery/uploads/img4.png"); }
-  16%, 25%  { background-image: url("../gallery/uploads/img9.jpg"); }
-  26%, 35%  { background-image: url("../gallery/uploads/img13.jpg"); }
-  36%, 45%  { background-image: url("../gallery/uploads/img7.jpg"); }
+  0%, 15%   { background-image: url("../gallery/uploads/img4.webp"); }
+  16%, 25%  { background-image: url("../gallery/uploads/img9.webp"); }
+  26%, 35%  { background-image: url("../gallery/uploads/img13.webp"); }
+  36%, 45%  { background-image: url("../gallery/uploads/img7.webp"); }
   46%, 55% { background-image: url("../gallery/uploads/img10.jpg"); }
-  56%, 65% { background-image: url("../gallery/uploads/img17.jpg"); }
-  66%, 75% { background-image: url("../gallery/uploads/img16.jpg"); }
-  76%, 85% { background-image: url("../gallery/uploads/img15.jpg"); }
-  86%, 100% { background-image: url("../gallery/uploads/img14.jpg"); }
+  56%, 65% { background-image: url("../gallery/uploads/img17.webp"); }
+  66%, 75% { background-image: url("../gallery/uploads/img16.webp"); }
+  76%, 85% { background-image: url("../gallery/uploads/img15.webp"); }
+  86%, 100% { background-image: url("../gallery/uploads/img14.webp"); }
 }
 
 .read-more {
