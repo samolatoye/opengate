@@ -1,11 +1,16 @@
-// Show popup after page load
+// Show popup after page load only if not shown in this session
 window.onload = function() {
-  document.getElementById("popup").classList.add("show");
+    // Check if popup has been shown in this session
+    if (!sessionStorage.getItem('popupShown')) {
+        document.getElementById("popup").classList.add("show");
+        // Mark popup as shown for this session
+        sessionStorage.setItem('popupShown', 'true');
+    }
 };
 
-// Close popup
+// Close popup function
 function closePopup() {
-  document.getElementById("popup").classList.remove("show");
+    document.getElementById("popup").classList.remove("show");
 }
 
 
